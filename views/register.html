@@ -1,0 +1,63 @@
+<html>
+
+	<head>
+		<style type="text/css">
+			hr{
+		    	display: inline-block;
+			}
+		</style>
+		<script>
+			function setWeights() {
+				// alert('inside setWeights');
+				num_sensors = 14;
+				var t = "";
+				for(var i=1; i<=num_sensors; i++) {
+					cur = document.getElementById("s" + i.toString()).value;
+					if(cur.length == 0)
+						cur = 0;
+					t = t + i + "=" + cur + ";";
+				}
+				document.myform.action = document.myform.action + t; 
+				// alert(t);
+			}
+
+			function clearAll() {
+				var num_sensors = 14;
+				for(var i=1; i<=num_sensors; i++)
+					document.getElementById("s" + i.toString()).value = "";
+			}
+		</script>
+	</head>	
+
+	<body onload="clearAll()">
+		<h1 style="margin-left: 30px;"> Well'Come </h1>
+<!-- action = "http://10.1.131.159:8090/putdata/" -->
+		<form name = "myform"  method="GET"> 
+			1:&nbsp;&nbsp;<input type="text" name="1" id="s1" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			8:&nbsp;&nbsp;&nbsp;<input type="text" name="8" id="s8" size="1"> <br><br> 
+
+			2:&nbsp;&nbsp;<input type="text" name="2" id="s2" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			9:&nbsp;&nbsp;&nbsp;<input type="text" name="9" id="s9" size="1"> <br><br> 
+
+			3:&nbsp;&nbsp;<input type="text" name="3" id="s3" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			10: <input type="text" name="10" id="s10" size="1"> <br><br> 	
+
+			4:&nbsp;&nbsp;<input type="text" name="4" id="s4" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			11: <input type="text" name="11" id="s11" size="1"> <br><br> 
+
+
+			5:&nbsp;&nbsp;<input type="text" name="5" id="s5" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			12: <input type="text" name="12" id="s12" size="1"> <br><br> 
+			
+			6:&nbsp;&nbsp;<input type="text" name="6" id="s6" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			13: <input type="text" name="13" id="s13" size="1"> <br><br> 
+
+			7:&nbsp;&nbsp;<input type="text" name="7" id="s7" size="1">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			14: <input type="text" name="14" id="s14" size="1"> <br><br> 
+			
+			<button type="submit" style="margin-left:70px;" onclick="setWeights()"> Set Distances </button> 
+		</form>
+
+	</body>
+
+</html>
